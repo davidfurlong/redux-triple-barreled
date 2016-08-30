@@ -1,0 +1,23 @@
+{
+  "name": "redux-triple-barreled-actions",
+  "version": "0.1",
+  "description": "Triple barreled action middleware for Redux.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidfurlong/redux-triple-barreled-actions.git"
+  },
+  "homepage": "https://github.com/davidfurlong/redux-triple-barreled-actions",
+  "keywords": [
+    "redux",
+    "triple-barreled",
+    "triple-barreled-actions",
+    "middleware",
+    "redux-middleware",
+    "flux"
+  ],
+  "author": "David Furlong",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}
