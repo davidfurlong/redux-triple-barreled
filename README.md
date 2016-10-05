@@ -1,7 +1,7 @@
 # Redux Triple Barreled Actions
 
 ## Action Syntax
-```
+```javascript
 // Action syntax
 {
 	types: [REQUEST_START_ACTION_TYPE, REQUEST_SUCCESS_ACTION_TYPE, REQUEST_FAIL_ACTION_TYPE],
@@ -23,7 +23,7 @@
 }
 ```
 Example use in a react component
-```
+```javascript
 someActionCreator(){
 	return {
 		types: [REQUEST_START_ACTION_TYPE, REQUEST_SUCCESS_ACTION_TYPE, REQUEST_FAIL_ACTION_TYPE],
@@ -42,7 +42,7 @@ dispatch(someActionCreator()).then(f1)
 ```
 
 Examples with real code
-```
+```javascript
 dispatch(load()).then(() => { //called after getAdministered async request has been reduced, or NO_AUTH has been reduced })
 
 export function load() { // authenticate using client auth token cookie
@@ -78,7 +78,7 @@ https://gist.github.com/andrewmclagan/c4e84b0dd76e721cf75db1c06439a19b
 When dispatch is called the first middleware (should usually be this one) is passed a curried function `(dispatch, getState) -> next -> action`. Calling next(action) passes action to the next middleware in the chain. Dispatching from within middleware sends the dispatched action to the start of the middleware chain. The Triple Barreled Actions middleware only lets simple redux actions through using next (ones that have a type property) and dispatches (sending to the start of the chain) some simple actions and some complex actions. Dispatching actions always returns a Promise, so that you can use `dispatch(action).then(do something)` in your code safely, regardless of whether `action` is a triple barreled action, or a simple redux action. 
 
 https://medium.com/@meagle/understanding-87566abcfb7a#.5k7x8hy1f
-```
+```javascript
 reducer :: state -> action -> state
 middleware :: (dispatch, getState) -> next -> action -> retVal
 applyMiddleware :: [middleware] -> (createStore -> createStore)
