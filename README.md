@@ -1,7 +1,7 @@
 # Redux Triple Barreled Actions
 
 ## Action Syntax
-```
+```js
 // Action syntax
 {
 	types: [REQUEST_START_ACTION_TYPE, REQUEST_SUCCESS_ACTION_TYPE, REQUEST_FAIL_ACTION_TYPE],
@@ -23,7 +23,7 @@
 }
 ```
 Example use in a react component
-```
+```js
 someActionCreator(){
 	return {
 		types: [REQUEST_START_ACTION_TYPE, REQUEST_SUCCESS_ACTION_TYPE, REQUEST_FAIL_ACTION_TYPE],
@@ -42,7 +42,7 @@ dispatch(someActionCreator()).then(f1)
 ```
 
 Examples with real code
-```
+```js
 dispatch(load()).then(() => { //called after getAdministered async request has been reduced, or NO_AUTH has been reduced })
 
 export function load() { // authenticate using client auth token cookie
